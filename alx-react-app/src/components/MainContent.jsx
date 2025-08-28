@@ -1,4 +1,4 @@
-function MaiContent () {
+function MainContent () {
     return (
         <main>
             <p>I love to visit New York, Paris, and Tokyo.</p>
@@ -6,4 +6,4 @@ function MaiContent () {
     );
 }
 
-export default MaiContent;
+export default MainContent;

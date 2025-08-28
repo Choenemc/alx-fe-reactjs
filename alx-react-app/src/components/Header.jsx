@@ -1,9 +1,9 @@
-function header() {
+function Header() {
     return (
 <header>
-    <h1>My Favorate City</h1>
+    <h1>My Favorate Cities</h1>
 </header>
     );
 }
 
-export default header;
+export default Header;
