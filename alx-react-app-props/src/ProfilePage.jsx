@@ -5,4 +5,4 @@ function ProfilePage({userData}){
     return <userInfo userData={userData} />
 }
 
-export default ProfilePage
+export default ProfilePage;
