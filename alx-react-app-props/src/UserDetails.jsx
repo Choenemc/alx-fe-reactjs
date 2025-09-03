@@ -1,4 +1,4 @@
-import { userContext } from "react";
+import Reach, { userContext } from "react";
 import UserContext from "./UserContext";
 
 function UserDetails({userData}){
@@ -12,4 +12,4 @@ function UserDetails({userData}){
     );
 }
 
-export default UserDetails;
+export default UserDetails; 
