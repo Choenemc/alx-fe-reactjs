@@ -1,15 +1,17 @@
-import Reach, { userContext } from "react";
+import React, { useContext } from "react";
 import UserContext from "./UserContext";
 
-function UserDetails({userData}){
-    const userContext = useContext(userContext);
-    return(
-        <div>
-            <p>Name: {userData.name}</p>
-            <p>Email: {userData.email}</p>
+function UserDetails() {
+  const userData = useContext(UserContext);
 
-        </div>
-    );
+  return (
+    <div>
+      <h2>User Details</h2>
+      <p>Name: {userData.name}</p>
+      <p>Email: {userData.email}</p>
+      
+    </div>
+  );
 }
 
-export default UserDetails; 
+export default UserDetails;
