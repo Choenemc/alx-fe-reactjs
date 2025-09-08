@@ -4,6 +4,7 @@ function Navbar() {
   return (
     <nav
       style={{
+        display: "justifyContent",
         backgroundColor: "navy",
         padding: "10px",
         textAlign: "center"
@@ -26,3 +27,4 @@ function Navbar() {
 }
 
 export default Navbar;
+s
