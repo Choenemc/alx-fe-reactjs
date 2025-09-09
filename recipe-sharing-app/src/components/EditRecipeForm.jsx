@@ -29,7 +29,7 @@ const updateRecipe = useRecipeStore((s) => s.updateRercipe);
         );
     }
 
-    const hndleSubmit = (e) => {
+    const handleSubmit = (e) => {
         Event.preventDefault();
         updateRecipe({id: recipe.id, title, description});
         navigate(`/recipes/${recipe.id}`);
