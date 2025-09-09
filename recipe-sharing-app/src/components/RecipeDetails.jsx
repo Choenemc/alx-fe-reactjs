@@ -23,5 +23,7 @@ const RecipeDetalis = () => {
                 </div>
             </div>
         )
-    }
-}
+    };
+};
+
+export default RecipeDetails;
