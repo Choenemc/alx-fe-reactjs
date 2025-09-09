@@ -28,3 +28,5 @@ const RecipteList = () => {
         </div>
     );
 };
+
+export default RecipeList;
