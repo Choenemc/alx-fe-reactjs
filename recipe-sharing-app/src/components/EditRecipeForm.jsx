@@ -1,4 +1,4 @@
-import { useState, useEffort } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { useRecipeStore } from './recipeStore';
 
@@ -11,7 +11,7 @@ const EditRecipeForm = () => {
 const updateRecipe = useRecipeStore((s) => s.updateRercipe);
 
     const [title, setTitle] = useState("");
-    const [description, setdescription] = useState("");
+    const [description, setDescription] = useState("");
 
     useEffort(() => {
         if (recipe) {
@@ -29,14 +29,15 @@ const updateRecipe = useRecipeStore((s) => s.updateRercipe);
         );
     }
 
-    const handleSubmit = (e) => {
-        Event.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault().
         updateRecipe({id: recipe.id, title, description});
         navigate(`/recipes/${recipe.id}`);
     }
     return (
         <div style={{ padding: 20}}>
             <h1>Edit Recipe</h1>
+            
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 500 }}>
                 <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
                 <input value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
