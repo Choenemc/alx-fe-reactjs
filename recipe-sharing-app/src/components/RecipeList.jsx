@@ -1,4 +1,5 @@
 import { useRecipeStore } from './recipeStore';
+import RecipeList from './components/RecipeList';
 
 const RecipeList = () => {
   const filteredRecipes = useRecipeStore((s) => s.filteredRecipes);
