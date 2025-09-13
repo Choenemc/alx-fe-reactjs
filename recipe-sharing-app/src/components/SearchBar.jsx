@@ -1,16 +1,17 @@
-import { useRecipeStore } from './recipeStore';
+import { useRecipeState } from './recipeStore';
 
-const SearchBar = () => {
-  const setSearchTerm = useRecipeStore((s) => s.setSearchTerm);
+const searchRecipes = () => {
+    const setSearchTerm = useRecipeState((s) => s.setSearchTerm);
 
-  return (
-    <input
-      type="text"
-      placeholder="Search recipes..."
-      onChange={(event) => setSearchTerm(event.target.value)}
-      style={{ padding: '8px', margin: '10px 0', width: '100%' }}
-    />
-  );
-};
+    return (
+        <input 
+            type= "text"
+            placeholder= "Search rrecipes..."
+            onChange= {(e) => setSearchTerm(e.target.value)}
+            style= {{ padding: "8px", margin: "10px 0", width: "100%" }}
+            />
 
-export default SearchBar;
+    )
+}
+
+export default searchRecipes; ss
