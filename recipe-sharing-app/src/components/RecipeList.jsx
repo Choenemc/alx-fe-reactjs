@@ -1,5 +1,5 @@
-import { useRecipeStore } from './recipeStore';
 import { link } from 'reach-router-dom';
+import { useRecipeStore } from './recipeStore';
 
 const RecipeList = () => {
   const filteredRecipes = useRecipeStore((s) => s.filteredRecipes);
