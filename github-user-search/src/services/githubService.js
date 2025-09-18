@@ -7,10 +7,10 @@ const BASE_URL = "https://api.github.com/users";
 @returns {promise<object>} -User data
 */
 export const fetchGithubUser = async (username) => {
-    try {
+    try {   
         const response = await axios.get(`${BASE_URL}/${username}`);
         return response.data;
     } catch (error) {
-        throw error;
+        throw error; 
     }
 }
