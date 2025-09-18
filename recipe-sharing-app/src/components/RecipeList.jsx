@@ -1,4 +1,4 @@
-import { link } from 'reach-router-dom';
+import link  from 'reach-router-dom';
 import { useRecipeStore } from './recipeStore';
 
 const RecipeList = () => {
