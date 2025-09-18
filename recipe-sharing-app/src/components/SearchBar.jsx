@@ -14,4 +14,4 @@ const searchRecipes = () => {
     )
 }
 
-export default searchRecipes; ss
+export default searchBar; 
