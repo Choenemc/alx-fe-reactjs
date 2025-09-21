@@ -1,7 +1,5 @@
-/* @tailwind directives removed because Tailwind CSS is not configured or recognized */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* Tailwind CSS directives removed because Tailwind CSS is not configured or recognized */
+
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
