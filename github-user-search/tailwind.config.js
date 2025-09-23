@@ -1,8 +1,13 @@
-/** @type {import('tailwindcss').config} */
-export default {
-    content:["*./index.html","./src/**/* .{js.ts.jsx.tsx}"],
+/** @type {import('tailwindcss').config}  */
+export default { 
+    context: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    
+    ],
     theme: {
         extend: {},
+
     },
     plugins: [],
-};
+}

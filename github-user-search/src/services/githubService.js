@@ -1,15 +1,18 @@
 import axios from "axios";
 
+// Function 1: main fetch for multiple users
 export const fetchUsers = async ({ username, location, minRepos }) => {
   let query = username ? `${username} in:login` : "";
   if (location) query += ` location:${location}`;
   if (minRepos) query += ` repos:>=${minRepos}`;
 
-  const response = await axios.get(`https://api.github.com/search/users?q=${query}`);
-  // GitHub API returns results under response.data.items
+  const response = await axios.get(
+    `https://api.github.com/search/users?q=${query}`
+  );
+
   const users = response.data.items;
 
-  // Fetch additional info for each user
+  // Fetch extra info for each user
   const detailedUsers = await Promise.all(
     users.map(async (user) => {
       const details = await axios.get(user.url);
@@ -19,3 +22,12 @@ export const fetchUsers = async ({ username, location, minRepos }) => {
 
   return detailedUsers;
 };
+
+// Function 2: fetch single user data
+export const fetchUserData = async (username) => {
+  if (!username) throw new Error("Username is required");
+
+  const response = await axios.get(`https://api.github.com/users/${username}`);
+  return response.data;
+};
+
