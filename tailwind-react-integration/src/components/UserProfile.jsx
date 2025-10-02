@@ -4,7 +4,7 @@ function UserProfile() {
             <img
             src="https://via.placeholder.com/150"
             alt="user"
-            classname="w-36 h-60 rounded-full m-auto"
+            classname="w-36 h-36 rounded-full m-auto"
             />
             <h1 classname="text-xl text-blue-800 my-4">john Doe</h1>
             <p classname="text-gray-600 text-base">
