@@ -4,10 +4,12 @@ function UserProfile() {
             <img
             src="https://via.placeholder.com/150"
             alt="user"
-            classname="w-36 h-36 rounded-full m-auto"
+            classname="w-24 h-24 sm:w-24 sm:h-24 md:w-36 md:h-36 rounded-full m-auto"
             />
-            <h1 classname="text-xl text-blue-800 my-4">john Doe</h1>
-            <p classname="text-gray-600 text-base">
+            <h1 classname="text-lg sm:text-lg md:text-xl text-blue-800 my-4">
+                john Doe
+            </h1>
+            <p classname="text-sm sm:text-sm md:text-base text-gray-600">
                 developer at example Co. Loves to write code and explore new technologies
             </p>
         </div>
