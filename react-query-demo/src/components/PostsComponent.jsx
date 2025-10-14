@@ -24,8 +24,20 @@ const PostsComponent = () => {
   } = useQuery({
     queryKey: ['posts'], // Unique key for caching
     queryFn: fetchPosts,
-    enabled: showPosts, // Only fetch when showPosts is true
+    enabled: showPosts,
+    
+        // ✅ Add the required configurations
+    cacheTime: 1000 * 60 * 30, // 30 minutes - data stays in cache for 30 mins
+    staleTime: 1000 * 60 * 5,  // 5 minutes - data is fresh for 5 mins
+    refetchOnWindowFocus: false, // Prevent refetch when window gains focus
+    keepPreviousData: true, // Keep previous data while fetching new data
+    
+    // Additional useful configurations
+    retry: 2, // Retry failed requests 2 times
+    retryDelay: attemptIndex => Math.min(1000 * 2 ** attemptIndex, 30000),
+  
   });
+
 
   const togglePosts = () => {
     setShowPosts(!showPosts);
