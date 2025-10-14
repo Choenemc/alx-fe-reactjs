@@ -6,6 +6,9 @@ const RegistrationForm = () => {
     email: "",
     password: ""
   });
+  const [errors, setErrors] = useState({}); // Add errors state
+
+  const { username, email, password } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,7 +20,28 @@ const RegistrationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    
+    // Validation logic
+    const newErrors = {};
+    
+    if (!username) {
+      newErrors.username = "Username is required";
+    }
+    
+    if (!email) {
+      newErrors.email = "Email is required";
+    }
+    
+    if (!password) {
+      newErrors.password = "Password is required";
+    }
+    
+    setErrors(newErrors); // Set validation errors
+    
+    // If no errors, submit the form
+    if (Object.keys(newErrors).length === 0) {
+      console.log("Form submitted:", formData);
+    }
   };
 
   return (
@@ -27,9 +51,10 @@ const RegistrationForm = () => {
         <input
           type="text"
           name="username"
-          value={username}     // ✅ Controlled
+          value={username}
           onChange={handleChange}
         />
+        {errors.username && <span style={{color: 'red'}}>{errors.username}</span>}
       </div>
 
       <div>
@@ -37,9 +62,10 @@ const RegistrationForm = () => {
         <input
           type="email"
           name="email"
-          value={email}        // ✅ Controlled
+          value={email}
           onChange={handleChange}
         />
+        {errors.email && <span style={{color: 'red'}}>{errors.email}</span>}
       </div>
 
       <div>
@@ -47,9 +73,10 @@ const RegistrationForm = () => {
         <input
           type="password"
           name="password"
-          value={password}     // ✅ Controlled
+          value={password}
           onChange={handleChange}
         />
+        {errors.password && <span style={{color: 'red'}}>{errors.password}</span>}
       </div>
 
       <button type="submit">Register</button>
