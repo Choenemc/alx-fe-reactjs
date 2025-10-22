@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import Navbar from './components/Navbar'
@@ -6,7 +7,7 @@ import About from './pages/About'
 import Profile from './pages/Profile'
 import Blog from './pages/Blog'
 import Login from './pages/Login'
-import ProtectedRoute from './components/ProtectedRoute'
+import ProtectedRoute from './pages/ProtectedRoute'
 import './App.css'
 
 function App() {
